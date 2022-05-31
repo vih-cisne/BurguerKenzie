@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Cart from "./components/Cart";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 
@@ -6,6 +7,8 @@ import ProductList from "./components/ProductList";
 function App() {
 
   const [products, setProducts] = useState([])
+  const [cartProducts, setCartProducts] = useState([])
+
 
 
   useEffect(() => {
@@ -20,7 +23,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <ProductList products={products}/>
+      <main>
+        <ProductList products={products} cartProducts={cartProducts} setCartProducts={setCartProducts}/>
+        <Cart cartProducts={cartProducts} setCartProducts={setCartProducts} />
+      </main>
     </div>
   );
 }
