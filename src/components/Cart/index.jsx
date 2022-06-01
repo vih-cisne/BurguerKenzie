@@ -5,12 +5,16 @@ import {
   ContainerButtonCart,
   CartAll,
   CartButton,
+  ListCart,
+  ButtonClose
 } from "./styles.js";
 import { MdOutlineNoFood } from "react-icons/md";
 import CartProduct from "../CartProduct/index.jsx";
 import CartTotal from "../CartTotal/index.jsx";
 import { useState } from "react";
 import { ImCart } from "react-icons/im";
+import { IoCloseCircle } from "react-icons/io5";
+
 
 function Cart({ cartProducts, setCartProducts }) {
   function getCount() {
@@ -22,7 +26,7 @@ function Cart({ cartProducts, setCartProducts }) {
   return (
     <>
       <ContainerButtonCart>
-        <CartButton onClick={() => setShowCart(!showCart)}>
+        <CartButton onClick={() => setShowCart(true)}>
           <ImCart />
           <span>{getCount()}</span>
         </CartButton>
@@ -30,7 +34,7 @@ function Cart({ cartProducts, setCartProducts }) {
       <BackgroundCart showCart={showCart}>
         <CartAll >
           <HeaderCart>
-            <h4>Carrinho de compras</h4>
+            <h4>Carrinho de compras</h4><ButtonClose onClick={() => setShowCart(false)}><IoCloseCircle/></ButtonClose>
           </HeaderCart>
           <ContextCart>
             {cartProducts.length === 0 ? (
@@ -41,6 +45,7 @@ function Cart({ cartProducts, setCartProducts }) {
               </>
             ) : (
               <>
+                <ListCart>
                 {cartProducts.map((el, index) => (
                   <CartProduct
                     cartProducts={cartProducts}
@@ -50,6 +55,7 @@ function Cart({ cartProducts, setCartProducts }) {
                     key={el.id}
                   />
                 ))}
+                </ListCart>
                 <CartTotal
                   cartProducts={cartProducts}
                   setCartProducts={setCartProducts}

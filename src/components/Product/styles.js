@@ -19,8 +19,9 @@ export const Button = styled.button`
 export const Card = styled.div`
     border: 2px solid #E0E0E0;
     border-radius: 5px;
-    max-width:300px;
-    min-width: 250px;
+    flex-basis: 200px;
+    flex-grow: 0.3;
+    flex-shrink: 0;
     padding: 0 0 15px 0;
     box-sizing: border-box;
 
@@ -53,8 +54,12 @@ export const Card = styled.div`
         font-size: 0.9rem;
     }
 
+    @media (max-width:620px) {
+        flex-basis: 220px;
+    }
+
     @media (max-width: 310px) {
-        max-width: 240px;
+        flex-basis: 240px;
     }
 
     
