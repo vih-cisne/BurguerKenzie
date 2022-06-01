@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
+import api from "./data/api"
 
 
 function App() {
@@ -15,12 +16,25 @@ function App() {
 
   useEffect(() => {
     
-    fetch('https://hamburgueria-kenzie-json-serve.herokuapp.com/products')
-    .then((res) => res.json())
-    .then((res) => setProducts(res))
-    .catch((error) => console.log(error))
-    
+    api.get('products')
+      .then((res) => {
+        setProducts(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      
+  }, []);
+
+  useEffect(() => {
+
+    const keepedProductsCart = localStorage.getItem('productsCart-burguerKenzie')
+
+    keepedProductsCart && setCartProducts(JSON.parse(keepedProductsCart))
+
   }, [])
+
+  
 
   return (
     <div className="App">

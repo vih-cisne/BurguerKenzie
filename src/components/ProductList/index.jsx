@@ -7,7 +7,7 @@ function ProductList({ products, cartProducts, setCartProducts, search, filtered
     return !filteredProducts ? (
     
         <ContainerProducts>
-            {products.map((product) => {
+            {products?.map((product) => {
                 let { id } = product
                 let newImg = `id${id}.svg`
                 product ={...product, newImg}

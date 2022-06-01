@@ -11,15 +11,17 @@ import {
 import { MdOutlineNoFood } from "react-icons/md";
 import CartProduct from "../CartProduct/index.jsx";
 import CartTotal from "../CartTotal/index.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ImCart } from "react-icons/im";
 import { IoCloseCircle } from "react-icons/io5";
 
 
 function Cart({ cartProducts, setCartProducts }) {
+
   function getCount() {
     return cartProducts.reduce((acc, actual) => acc + actual.quantity, 0);
   }
+
 
   const [showCart, setShowCart] = useState(false);
 

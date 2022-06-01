@@ -1,9 +1,16 @@
+import { useEffect } from "react"
 import { Total, RemoveAll } from "./styles"
 
 
 
 function CartTotal({ cartProducts, setCartProducts }) {
     const total = cartProducts.reduce((acc, atual) => acc + atual.price*atual.quantity , 0)
+
+    useEffect(() => {
+    
+        localStorage.setItem('productsCart-burguerKenzie', JSON.stringify([...cartProducts]))
+
+    }, [cartProducts])
     
     return (
         <>

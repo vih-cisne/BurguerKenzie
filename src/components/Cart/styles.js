@@ -32,7 +32,6 @@ export const BackgroundCart = styled.div`
         top: 0;
         left: 0;
         justify-content: center;
-        align-items: center;
           
     }
 `
@@ -58,7 +57,7 @@ export const ContextCart = styled.div`
     background-color: #F5F5F5;
     gap: 15px;
     padding-top: 15px;
-    min-height: 120px;
+    min-height: 150px;
     box-sizing: border-box;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
