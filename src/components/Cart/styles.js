@@ -20,6 +20,21 @@ export const HeaderCart = styled.div`
 
 `
 
+export const BackgroundCart = styled.div`
+
+    @media (max-width: 620px) {
+        display: ${({showCart}) => showCart ? 'flex' : 'none' };
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(255,255,255, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        justify-content: center;
+          
+    }
+`
+
 export const CartAll = styled.div`
     display: flex;
     flex-direction: column;
@@ -44,11 +59,56 @@ export const ContextCart = styled.div`
 
     h4 {
         margin: 0;
+        color: #333333;
     }
 
     p {
         margin: 0;
+        color: #828282;
     }
+
+    @media (max-width: 620px) {
+        max-height: 60vh;
+        overflow-y: scroll;
+          
+    }
+    
+
+`
+
+export const CartButton = styled.button`
+    display: none;
+    height: fit-content;
+    border: none;
+    border-radius: 50%;
+    padding: 12px 15px;
+    background: #27AE60;
+    color: white;
+    font-size: 1rem;
+    position: relative;
+
+    span {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        color: #333333;
+        background-color: #828282;
+        padding: 1px 4px;
+        border-radius: 50%;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    @media (max-width: 620px) {
+        display: flex;
+    }
+
+`
+
+export const ContainerButtonCart = styled.div`
+    position: absolute;
+    top: 5px;
+    right: 25px;
     
 
 `

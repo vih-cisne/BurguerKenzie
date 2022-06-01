@@ -53,6 +53,10 @@ export const Card = styled.div`
         font-size: 0.9rem;
     }
 
+    @media (max-width: 310px) {
+        max-width: 240px;
+    }
+
     
 `
 

@@ -18,7 +18,7 @@ export const ButtonSearch = styled.button`
 
 `
 
-export const Search = styled.div`
+export const Search = styled.form`
     
     position: relative;
     width: fit-content;

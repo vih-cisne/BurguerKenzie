@@ -9,7 +9,9 @@ function App() {
   const [products, setProducts] = useState([])
   const [cartProducts, setCartProducts] = useState([])
 
-
+  const [filteredProducts, setFilteredProducts] = useState(undefined)
+  
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     
@@ -22,9 +24,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header search={search} setSearch={setSearch} products={products}  setFilteredProducts={setFilteredProducts}/>
       <main>
-        <ProductList products={products} cartProducts={cartProducts} setCartProducts={setCartProducts}/>
+        <ProductList search={search} filteredProducts={filteredProducts} products={products} cartProducts={cartProducts} setCartProducts={setCartProducts}/>
         <Cart cartProducts={cartProducts} setCartProducts={setCartProducts} />
       </main>
     </div>
