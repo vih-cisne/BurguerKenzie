@@ -4,6 +4,7 @@ export const ContainerProducts = styled.div`
   margin-top: 4rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
   width: 80vw;
@@ -11,6 +12,7 @@ export const ContainerProducts = styled.div`
   @media (max-width: 620px) {
     width: 95vw;
     padding: 1rem 0;
+    justify-content: flex-start;
     margin-top: 2.5rem;
     flex-wrap: nowrap;
     overflow-x: scroll;

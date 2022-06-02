@@ -10,7 +10,9 @@ function InputSearch({search, setSearch, products, setFilteredProducts}) {
         e.preventDefault()
 
         function normalize(str) {
-            return str.toLowerCase()
+            const nStr = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            console.log(nStr)
+            return nStr.toLowerCase()
         }
 
         const filtered = products.filter((el) => 
@@ -26,7 +28,6 @@ function InputSearch({search, setSearch, products, setFilteredProducts}) {
         setSearch(e.target.value)
         if(e.target.value==='') {
             setFilteredProducts(undefined)
-
         } 
     }
 
