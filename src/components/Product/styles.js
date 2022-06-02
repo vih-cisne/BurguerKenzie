@@ -19,7 +19,7 @@ export const Button = styled.button`
 export const Card = styled.div`
     border: 2px solid #E0E0E0;
     border-radius: 5px;
-    flex-basis: fit-content;
+    flex-basis: 250px;
     flex-grow: 0.2;
     flex-shrink: 0;
     padding: 0 0 15px 0;
