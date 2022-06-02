@@ -9,6 +9,11 @@ export const Global = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  h4, p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   button {
     cursor: pointer;
   }

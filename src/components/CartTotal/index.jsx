@@ -10,6 +10,12 @@ function CartTotal({ cartProducts, setCartProducts }) {
     
         localStorage.setItem('productsCart-burguerKenzie', JSON.stringify([...cartProducts]))
 
+        return () => {
+            
+            localStorage.setItem('productsCart-burguerKenzie', JSON.stringify([]))
+            
+        }
+
     }, [cartProducts])
     
     return (
